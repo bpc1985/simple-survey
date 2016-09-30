@@ -1,0 +1,26 @@
+<div class="g-row">
+  <div class="g-col">
+    <h2>Survey Result</h2>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Colors</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let survey of surveys | async">
+          <td>{{survey.createdAt | date:'short'}}</td>
+          <td>{{survey.name}}</td>
+          <td>{{survey.age}}</td>
+          <td>{{survey.colors}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

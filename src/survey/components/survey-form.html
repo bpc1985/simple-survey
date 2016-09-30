@@ -1,0 +1,55 @@
+<div class="g-row">
+  <div class="g-col">
+    <form (ngSubmit)="submit()" novalidate>
+      <div>
+        <h4>Survey Questions</h4>
+      </div>
+      
+      <div>
+        <!-- input box -->
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="name">
+        </div>
+          
+        <!--radio buttons -->
+        <div>
+          <label>Your Age</label>
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" value="30-" [(ngModel)]="age">
+                  Less than 30
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" value="30-60" [(ngModel)]="age">
+                  30 to 60
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" value="60+" [(ngModel)]="age">
+                  Over 60
+              </label>
+            </div>
+          </div>
+        </div>
+          
+          <!-- multiSelect -->
+          <label>Favorite Colors</label>
+          <div>
+            <select multiple name="colors" class="form-control" [(ngModel)]="selectedColors">
+              <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+            </select>
+          </div>
+      </div>
+      
+      <div class="">
+        <button type="button" class="btn btn-default">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+  </div>
+</div>
